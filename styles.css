@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+span {
+  
+    top: 5px;
+    font-size: 81px;
+    color: white;
+}
+
+span::after {
+    position: absolute;
+    content: "";
+    border: 5px solid white;
+    background-color: white;
+    transform: rotate(147deg);
+    height: 15px;
+    width: 2px;
+    top: 61px;
+    right: 1px;
+}
+
+h1 {
+padding: 20px;
+background-color: hsl(277, 100%, 50%) ;
+border: 3px solid hsl(277, 100%, 50%);
+font-weight: 600;
+font-size: 60px;
+color:white;
+text-shadow: black;
+font-family: sans-serif;
+text-align: center;
+}
+
+nav {
+width: 20%;
+left: 80%;
+position: absolute;
+text-align: center;
+background-color: hsl(280, 100%, 75%);
+border: 3px solid hsl(277, 100%, 50%);
+border-radius: 10px;
+}
+
+h2 {
+ color: hsl(277, 100%, 50%);
+}
+
+nav h3 {
+   color: hsl(277, 100%, 50%);
+   font-size: 40px;
+   font-family: sans-serif;
+}
+nav li {
+    right: 7%;
+    margin: 30px auto;
+    position: relative;
+    background-color: aliceblue;
+    width: 70%;
+    display: block;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+nav li:hover {
+    color: white;
+    background-color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav a {
+    text-decoration: none;
+}
+#fall-incentive {
+    left: 20%;
+}
+
+#fall-incentive h2 {
+    color: hsl(277, 100%, 50%);
+   }
+   
+#fall-incentive h3 {
+    color: hsl(280, 100%, 75%);
+    left: 5%;
+}
+
+#fall-incentive h4 {
+    left: 10%;
+    padding: 10px;
+    background-color: hsl(280, 100%, 75%);
+    width: 30%;
+    border-radius: 5px;
+    color: white;
+}
+
+#fall-incentive p {
+    left: 15%;
+}
+#ranking {
+text-align: center;
+}
+
+#ranking h2 {
+    text-align: left;
+    left: 20%;
+}
+
+.rank {
+    background-color: hsl(280, 100%, 75%);
+    color: white;
+}
+table {
+    margin: 0 auto;
+    border-radius: 5px;
+}
+table, tr, td, th {
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 35px;
+}
+
+th {
+    background-color: hsl(277, 100%, 50%);
+    color: white;
+    font-weight: 700;
+}
+
