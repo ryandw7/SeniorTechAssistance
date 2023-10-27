@@ -49,6 +49,7 @@ nav {
     background-color: hsl(72, 0%, 95%);
     border: 5px solid hsl(277, 100%, 50%);
     border-radius: 10px;
+    max-height: max-content;
 }
 
 nav h3 {
