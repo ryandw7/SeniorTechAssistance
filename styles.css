@@ -27,9 +27,11 @@ h1 span::after {
 }
 
 h1 {
+    border-top: 30px solid black;
+    position: relative;
     padding: 20px;
     background-color: hsl(277, 100%, 50%);
-    border: 3px solid hsl(277, 100%, 50%);
+    top: 0px;
     font-weight: 600;
     font-size: 60px;
     color: white;
@@ -39,28 +41,42 @@ h1 {
 }
 
 nav {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    font-size-adjust: auto;
+    overflow-y: scroll;
     top: 10px;
     font-size: 25px;
+    height: 90%;
     width: 20%;
     left: 80%;
     position: fixed;
     float: left;
     text-align: center;
-    background-color: hsl(72, 0%, 95%);
-    border: 5px solid hsl(277, 100%, 50%);
+    background-color: white;
+    border: 3px solid black;
     border-radius: 10px;
+    max-height: max-content;
+    
 }
 
 nav h3 {
+    left: 10%;
+    text-align: center;
+    position: relative;
+    width: 80%;
     color: hsl(277, 100%, 50%);
+    border-bottom: 3px solid black;
 }
 nav li {
+    
     right: 7%;
     margin: 30px auto;
     position: relative;
     background-color: hsl(277, 100%, 50%);
-    width: 70%;
-    display: block;
+    width: auto;
+    
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -104,6 +120,7 @@ section {
 
 section h2 {
     color: hsl(277, 100%, 50%);
+    border-bottom: 3 px solid black;
 }
 
 section h3 {
@@ -127,6 +144,10 @@ section h4 {
     border: 3px solid hsl(277, 100%, 50%);
     border-radius: 5px;
     margin-bottom: 100px;
+}
+
+#rochester-incentive h2 {
+    border-bottom: 3px solid black;
 }
 
 #heartland-incentive {
