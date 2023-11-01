@@ -1,86 +1,26 @@
 * {
+    font-family: sans-serif;
     box-sizing: border-box;
     position: relative;
+    margin: 0 auto;
 }
 
-@media (width <= 1200px) {
-
-    nav {
-        font-size: 20px;
-        
-    }
-
-    header {
-        font-size: smaller;
-    }
-
-    h1 {
-        width: 80%;
-        font-size: 40px;
-    }
-
-    main {
-        left: 0%;
-        
-    }
-
-    section#rochester-incentive {
-        width: 60%;
-        display: block;
-        left: 10%;
-        
-    }
-
-    section#heartland-incentive {
-        width: 60%;
-        display: block;
-        left: 10%;
-       
-    }
-   #ranking table {
-    margin-left: 0;
-    position: relative;
-    left: 0%;
-   }
-   #ranking table, #ranking tr, #ranking th, #ranking td {
-    width: 60%;
-    left: 0%;
-    font-size: smaller;
-   }
-
-   
-  
+@media (width <=1200px) {
+main section {
+  font-size: 25px;
+  right: 50px;
 }
 
-main {
-    left: 20%;
-    width: 60%;
+
 }
 
-h1 span {
-    top: 5px;
-    font-size: 81px;
-    color: white;
-}
 
-h1 span::after {
-    position: absolute;
-    content: "";
-    border: 5px solid white;
-    background-color: white;
-    transform: rotate(147deg);
-    height: 15px;
-    width: 2px;
-    top: 61px;
-    right: 1px;
-}
 
 h1 {
     border-top: 30px solid black;
     position: relative;
     padding: 20px;
     background-color: hsl(277, 100%, 50%);
-    top: 0px;
     font-weight: 600;
     font-size: 60px;
     color: white;
@@ -88,44 +28,49 @@ h1 {
     font-family: sans-serif;
     text-align: center;
 }
+h1 span {
+    top: 5px;
+    font-size: 81px;
+    color: white;
+}
+
 
 nav {
     display: flex;
     flex-direction: column;
     flex-shrink: 1;
-    font-size-adjust: auto;
-    overflow-y: scroll;
     top: 10px;
     font-size: 25px;
     height: 90%;
     width: 20%;
-    left: 80%;
-    position: fixed;
+    left: 75%;
     float: left;
     text-align: center;
-    background-color: white;
-    border: 3px solid black;
     border-radius: 10px;
     max-height: max-content;
+    z-index: 1;
 }
 
 nav h3 {
-    left: 10%;
     text-align: center;
-    position: relative;
-    width: 80%;
     color: hsl(277, 100%, 50%);
     border-bottom: 3px solid black;
 }
 
-nav li {
+nav h3::after {
+    position: relative;
+    top: 7px;
+    left: 5px;
+    content: "^";
+    color: black;
+}
 
+nav li {
     right: 7%;
-    margin: 30px auto;
+    font-size: 80%;
+    margin: 10px auto;
     position: relative;
     background-color: hsl(277, 100%, 50%);
-    width: auto;
-
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -136,10 +81,9 @@ nav li {
 
 
 
-#nav-list li:hover {
+.nav:hover {
     color: white;
     background-color: hsl(277, 100%, 70%);
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -154,97 +98,69 @@ nav span {
 }
 
 .docs {
-    background-color: hsl(277, 100%, 70%);
+    background-color: hsl(0, 0%, 87%);
+    color: black;
+    list-style-type: none;
 }
 
 section {
-    display: inline-block;
+    display: block;
     position: relative;
-    font-size: x-large;
-    width: 60%;
-    left: 15%;
-    top: 50px;
-
+    width: fit-content;
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 30px auto;
+    background-color: hsl(0, 0%, 87%);
 }
 
 section h2 {
     color: hsl(277, 100%, 50%);
-    border-bottom: 3 px solid black;
+    
 }
 
 section h3 {
-    color: hsl(277, 100%, 70%);
+    font-size: 80%;
+    color: hsl(0, 0%, 35%);
+    text-decoration: underline;
 }
 
 section h4 {
+    font-size: 70%;
     margin-top: 40px;
-    left: 10%;
     padding: 10px;
     background-color: hsl(277, 100%, 50%);
-    width: 50%;
-    border-radius: 5px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     color: white;
 }
 
-#rochester-incentive {
-    width: fit-content;
-    padding: 10px 30px;
-    padding-left: 20px;
-    border: 3px solid hsl(277, 100%, 50%);
-    border-radius: 5px;
-    margin-bottom: 100px;
-}
-
-#rochester-incentive h2 {
-    border-bottom: 3px solid black;
-}
-
-#heartland-incentive {
-    position: relative;
-    top: 20px;
-}
-
 section p {
-    left: 15%;
-    width: 80%;
+   font-size: 60%;
+   background-color: aliceblue;
+   border-bottom: 3px solid black;
+   border-right: 3px solid black;
+   border-left: 3px solid black;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   padding: 10px;
 }
 
-#ranking {
-    text-align: center;
-    width: 60%;
-
-}
-
-#ranking h2 {
-    text-align: left;
-}
-
-.rank {
-    background-color: hsl(72, 0%, 95%);
-    color: black;
-}
-
-thead th {
-    position: sticky
-}
-
-table {
-    border: 3px solid hsl(277, 100%, 50%);
-    margin: 0 auto;
-    border-radius: 5px;
-}
-
-table,
 tr,
 td,
 th {
     border: 1px solid black;
     padding: 10px;
-    font-size: 35px;
+
 }
 
 tr {
     color: hsl(277, 100%, 50%);
+    background-color: white;
 }
 
 th {

@@ -42,3 +42,48 @@ const reps = {
     }
  
 }
+
+const navListHead = document.getElementById("nav-list-head");
+const docListHead = document.getElementById("doc-list-head");
+const navList = document.getElementById("nav-list");
+const docList = document.getElementById("doc-list");
+const nav = document.querySelector("nav");
+
+navListHead.addEventListener('click', ()=> {
+    if (navList.hidden === false){
+        navList.hidden = true;
+        nav.style.height = "fit-content"
+    }else if(navList.hidden === true){
+        navList.hidden = false;
+        if(docList.hidden === false){
+            nav.style.height = "90%"
+        }else{
+            nav.style.height = "fit-content"
+        }
+    }
+})
+
+docListHead.addEventListener('click', ()=> {
+    if (docList.hidden === false){
+        docList.hidden = true;
+        nav.style.height = "fit-content"
+    }else if(docList.hidden === true){
+        docList.hidden = false;
+        if(navList.hidden === false){
+            nav.style.height = "90%"
+        }else{
+            nav.style.height = "fit-content"
+        }
+    }
+})
+
+function navSize(){
+    if(docList.hidden === false){
+     nav.style.height = "90%";
+    }else{
+        nav.style.height = "fit-content";
+        nav.style.backgroundColor = "white";
+    }
+}
+
+navSize();
