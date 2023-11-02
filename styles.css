@@ -15,12 +15,13 @@
 
     header nav {
         font-size: 10px;
-        width: 90%;
+        width: 100%;
         left: 0%;
         position: relative;
         display: block;
         float: none;
         text-align: center;
+        text-wrap: wrap;
     }
 
     header nav h3 {
@@ -31,16 +32,16 @@
         border-radius: 5px;
     }
 
-    header #nav-list {
-        margin: 0 auto;
-    }
+ 
   
     header #nav-list li,
     header #doc-list li {
         left: 0%;
         position: relative;
-        margin: 0 auto;
+        margin: 5px 5px;
         display: inline-block;
+        height: fit-content;
+        text-wrap: wrap;
     }
    
 
