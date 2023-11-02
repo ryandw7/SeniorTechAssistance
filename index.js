@@ -1,47 +1,56 @@
-const reps = {
-    david: {
-        rank: 1,
-        percentage: 0
+let reps = [
+    {
+        name: 'David',
+        rank: 10,
+        percentage: 10
     },
-    muhammid: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Muhammad',
+        rank: 10,
+        percentage: 20
     },
-    scott: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Scott',
+        rank: 10,
+        percentage: 30
     },
-    neil: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Neil',
+        rank: 10,
+        percentage: 40
     },
-    ryan: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Ryan',
+        rank: 10,
+        percentage: 50
     },
-    kenyatta: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Kenyatta',
+        rank: 10,
+        percentage: 60
     },
-    andrew: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Andrew',
+        rank: 10,
+        percentage: 7
     },
-    rakib: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Rakib',
+        rank: 10,
+        percentage: 8
     },
-    andrae: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Andrae',
+        rank: 10,
+        percentage: 9
     },
-
-    aj: {
-        rank: 1,
-        percentage: 0
+    {
+        name: 'Aj',
+        rank: 10,
+        percentage: 10
     }
- 
-}
+
+]
 
 const navListHead = document.getElementById("nav-list-head");
 const docListHead = document.getElementById("doc-list-head");
@@ -51,13 +60,13 @@ const nav = document.querySelector("nav");
 const navSpan = document.getElementById("nav-span");
 const docSpan = document.getElementById("doc-span");
 
-navListHead.addEventListener('click', ()=> {
-    if (navList.hidden === false){
+navListHead.addEventListener('click', () => {
+    if (navList.hidden === false) {
         navList.hidden = true;
         navSpan.textContent = "v";
         navSpan.style.top = "0px";
         navSpan.style.fontSize = "smaller";
-    }else if(navList.hidden === true){
+    } else if (navList.hidden === true) {
         navList.hidden = false;
         navSpan.textContent = "^";
         navSpan.style.top = "5px";
@@ -65,13 +74,13 @@ navListHead.addEventListener('click', ()=> {
     }
 })
 
-docListHead.addEventListener('click', ()=> {
-    if (docList.hidden === false){
+docListHead.addEventListener('click', () => {
+    if (docList.hidden === false) {
         docList.hidden = true;
         docSpan.textContent = "v";
         docSpan.style.top = "0px";
         docSpan.style.fontSize = "smaller";
-    }else if(docList.hidden === true){
+    } else if (docList.hidden === true) {
         docList.hidden = false;
         docSpan.textContent = "^";
         docSpan.style.top = "5px"
@@ -79,3 +88,38 @@ docListHead.addEventListener('click', ()=> {
     }
 })
 
+let mobile = window.matchMedia("(max-width: 1170px)");
+
+function windowCheck(x) {
+    if (x.matches) {
+        navList.hidden = true;
+        docList.hidden = true;
+    }else{
+        navList.hidden = false;
+        docList.hidden = false;
+    }
+}
+
+
+windowCheck(mobile);
+
+function checkRank() {
+    {
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                if ((reps[i].percentage) > (reps[j].percentage)) {
+                    reps[i].rank -= 1;
+                } else if (reps[i].percentage < reps[j].percentage) {
+                    reps[i].rank += 1;
+                }
+
+            }
+        }
+        for(let i = 0; i < 9; i++){
+            reps[i].rank = (reps[i].rank / 2)
+        }
+      console.log(reps);
+    }
+}
+
+checkRank()
