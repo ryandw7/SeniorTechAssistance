@@ -116,6 +116,7 @@
   
     header #nav-list li,
     header #doc-list li {
+        width: 80%;
         margin: 30px;
         position: relative;
         display: block;
