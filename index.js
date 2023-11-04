@@ -1,53 +1,66 @@
 let reps = [
     {
+        rank: 10,
         name: 'David',
-        rank: 10,
-        percentage: 10
+        percentage: 40
+
     },
     {
+        rank: 10,
         name: 'Muhammad',
-        rank: 10,
-        percentage: 20
+        percentage: 0
+
     },
     {
+
+        rank: 10,
         name: 'Scott',
-        rank: 10,
-        percentage: 30
+        percentage: 0
+
     },
     {
-        name: 'Neil',
+
         rank: 10,
+        name: 'Neil',
+        percentage: 20
+
+    },
+    {
+
+        rank: 10,
+        name: 'Ryan',
+        percentage: 25
+    },
+    {
+
+        rank: 10,
+        name: 'Kenyatta',
+        percentage: 28.57
+
+    },
+    {
+
+        rank: 10,
+        name: 'Andrew',
         percentage: 40
     },
     {
-        name: 'Ryan',
+
         rank: 10,
-        percentage: 50
-    },
-    {
-        name: 'Kenyatta',
-        rank: 10,
-        percentage: 60
-    },
-    {
-        name: 'Andrew',
-        rank: 10,
-        percentage: 7
-    },
-    {
         name: 'Rakib',
-        rank: 10,
-        percentage: 8
+        percentage: 0
     },
     {
+
+        rank: 10,
         name: 'Andrae',
-        rank: 10,
-        percentage: 9
+        percentage: 37.50
     },
     {
-        name: 'Aj',
+
         rank: 10,
-        percentage: 10
+        name: 'Aj',
+        percentage: 66.67
     }
 
 ]
@@ -59,6 +72,7 @@ const docList = document.getElementById("doc-list");
 const nav = document.querySelector("nav");
 const navSpan = document.getElementById("nav-span");
 const docSpan = document.getElementById("doc-span");
+const table = document.querySelector("tbody");
 
 navListHead.addEventListener('click', () => {
     if (navList.hidden === false) {
@@ -94,7 +108,7 @@ function windowCheck(x) {
     if (x.matches) {
         navList.hidden = true;
         docList.hidden = true;
-    }else{
+    } else {
         navList.hidden = false;
         docList.hidden = false;
     }
@@ -103,23 +117,57 @@ function windowCheck(x) {
 
 windowCheck(mobile);
 
-function checkRank() {
-    {
-        for (let i = 0; i < 9; i++) {
-            for (let j = 0; j < 9; j++) {
-                if ((reps[i].percentage) > (reps[j].percentage)) {
-                    reps[i].rank -= 1;
-                } else if (reps[i].percentage < reps[j].percentage) {
-                    reps[i].rank += 1;
-                }
 
-            }
-        }
-        for(let i = 0; i < 9; i++){
-            reps[i].rank = (reps[i].rank / 2)
-        }
-      console.log(reps);
+let sortedReps = reps.sort(
+    (rep1, rep2) => (rep1.percentage < rep2.percentage) ? 1 : (rep1.percentage > rep2.percentage) ? -1 : 0);
+
+
+function changeRank() {
+    for (let i = 0; i < sortedReps.length; i++) {
+        sortedReps[i].rank = (i + 1);
+    }
+    for (let i = 0; i < sortedReps.length; i++) {
+        let row = table.insertRow(i);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+
+        cell1.textContent = sortedReps[i].rank;
+        cell2.textContent = sortedReps[i].name;
+        cell3.textContent = sortedReps[i].percentage;
     }
 }
 
-checkRank()
+
+
+
+
+
+changeRank()
+
+/*
+let SHEET_ID = "1u011JiIm1YYlpmTfGab6GIVNlJHwzk2dWzt-d8iFs-I";
+let baseUrl = "https://docs.google.com/spreadsheets/d/";
+let key = "edit#gid=0";
+let url = baseUrl + SHEET_ID + key;
+
+async function fetchSheets(){
+    try {
+const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT_atSPXV0wy2hXokyNX3MWsbjD8HMtuGiJQN65tbiRj5rE7Qu_3Q14BRE7UFwhnm9FDrmL6J5zpgEP/pubhtml", { 
+method: "GET", // *GET, POST, PUT, DELETE, etc.
+mode: "no-cors", // no-cors, *cors, same-origin
+cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+credentials: "same-origin", // include, *same-origin, omit
+headers: {
+  "Content-Type": "application/json" }
+}
+  );
+console.log(response);
+console.log(sheet);
+    }catch (error){
+        console.log(error)
+    }
+}
+
+fetchSheets()
+*/
