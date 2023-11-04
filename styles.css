@@ -253,18 +253,18 @@ nav a {
 nav span {
     font-weight: bolder;
     text-decoration: underline;
+    -webkit-user-select:text;
+    /* Safari */
+    -ms-user-select: text;
+    /* IE 10 and IE 11 */
+    user-select: text;
+    /* Standard syntax */
 }
 
 .doc {
     background-color: hsl(0, 0%, 87%);
     color: black;
     list-style-type: none;
-    -webkit-user-select: text;
-    /* Safari */
-    -ms-user-select: text;
-    /* IE 10 and IE 11 */
-    user-select: text;
-    /* Standard syntax */
 }
 
 section {
@@ -379,4 +379,8 @@ footer {
     color: white;
     text-align: center;
     font-size: 15px;
+}
+
+td+td+td::after {
+    content: "%"
 }
