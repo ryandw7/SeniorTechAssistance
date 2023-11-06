@@ -2,7 +2,7 @@ let reps = [
     {
         rank: 10,
         name: 'David',
-        percentage: 40
+        percentage: 28.57
 
     },
     {
@@ -60,7 +60,7 @@ let reps = [
 
         rank: 10,
         name: 'Aj',
-        percentage: 66.67
+        percentage: 50
     }
 
 ]
@@ -134,7 +134,7 @@ function changeRank() {
 
         cell1.textContent = sortedReps[i].rank;
         cell2.textContent = sortedReps[i].name;
-        cell3.textContent = sortedReps[i].percentage;
+        cell3.textContent = sortedReps[i].percentage.toFixed(2);
     }
 }
 
