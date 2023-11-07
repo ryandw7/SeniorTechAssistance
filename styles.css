@@ -280,7 +280,8 @@ section {
 
 section h2 {
     text-align: center;
-    color: hsl(226, 100%, 50%);
+    color: gray;
+    font-weight: 700;
     padding-bottom: 35px;
 
 }
