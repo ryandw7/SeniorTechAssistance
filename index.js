@@ -64,7 +64,7 @@ let reps = [
     }
 
 ]
-
+const navListItems = document.getElementsByClassName("nav")
 const navListHead = document.getElementById("nav-list-head");
 const docListHead = document.getElementById("doc-list-head");
 const navList = document.getElementById("nav-list");
@@ -73,32 +73,53 @@ const nav = document.querySelector("nav");
 const navSpan = document.getElementById("nav-span");
 const docSpan = document.getElementById("doc-span");
 const table = document.querySelector("tbody");
+const nav1 = document.getElementById("nav1");
+const nav2 = document.getElementById("nav2");
+const nav3 = document.getElementById("nav3");
+const nav4 = document.getElementById("nav4");
 
 navListHead.addEventListener('click', () => {
     if (navList.hidden === false) {
+        /* setTimeout(()=>{
+            setTimeout(()=>{
+            nav4.style.transition = "opacity 5s"
+            }
+            )
+            nav4.style.display = "none";
+            console.log("test");
+        }, 0);
+        setTimeout(()=>{
+            nav3.style.display = "none";
+            console.log("test");
+        }, 25);
+        setTimeout(()=>{
+            nav2.style.display = "none";
+            console.log("test");
+        }, 50);
+        setTimeout(()=>{
+            nav1.style.display = "none";
+            console.log("test");
+        }, 75);
+        */
         navList.hidden = true;
-        navSpan.textContent = "v";
-        navSpan.style.top = "0px";
-        navSpan.style.fontSize = "smaller";
+        navSpan.style.rotate = "180deg";
+        navSpan.style.bottom = "5px"
     } else if (navList.hidden === true) {
         navList.hidden = false;
-        navSpan.textContent = "^";
-        navSpan.style.top = "5px";
-        navSpan.style.fontSize = "";
+        navSpan.style.rotate = "0deg";
+        navSpan.style.bottom = "0px";
     }
 })
 
 docListHead.addEventListener('click', () => {
     if (docList.hidden === false) {
+        docSpan.style.rotate = "180deg";
+        docSpan.style.bottom = "5px";
         docList.hidden = true;
-        docSpan.textContent = "v";
-        docSpan.style.top = "0px";
-        docSpan.style.fontSize = "smaller";
     } else if (docList.hidden === true) {
         docList.hidden = false;
-        docSpan.textContent = "^";
-        docSpan.style.top = "5px"
-        docSpan.style.fontSize = "";
+        docSpan.style.rotate = "0deg";
+        docSpan.style.bottom = "0px";
     }
 })
 
@@ -106,11 +127,20 @@ let mobile = window.matchMedia("(max-width: 1170px)");
 
 function windowCheck(x) {
     if (x.matches) {
+        docSpan.style.rotate = "180deg";
+        navSpan.style.rotate = "180deg";
+        docSpan.style.bottom = "0px";
+        navSpan.style.bottom = "0px";
         navList.hidden = true;
         docList.hidden = true;
+        
     } else {
-        navList.hidden = false;
+        navSpan.style.bottom = "5px"
+        docSpan.style.bottom = "5px";
+        navListItems.hidden = false;
         docList.hidden = false;
+        docSpan.style.rotate = "0deg";
+        navSpan.style.rotate = "0deg";
     }
 }
 
