@@ -1,111 +1,118 @@
-let reps = [
-    {
-        rank: 10,
-        name: 'David',
-        percentage: 28.57
+//IMPORT FOR RANK DATA
+import { reps } from "./ranking.js";
 
-    },
-    {
-        rank: 10,
-        name: 'Muhammad',
-        percentage: 0
+//NAV STYLE CHANGE FOR MOBILE
+function windowCheck(x) {
+    if (x.matches) {
+        navSpan.style.bottom = "5px";
+        docSpan.style.bottom = "5px";
+        docSpan.style.rotate = "180deg";
+        navSpan.style.rotate = "180deg";
+        navList.hidden = true;
+        docList.hidden = true;
 
-    },
-    {
-
-        rank: 10,
-        name: 'Scott',
-        percentage: 0
-
-    },
-    {
-
-        rank: 10,
-        name: 'Neil',
-        percentage: 20
-
-    },
-    {
-
-        rank: 10,
-        name: 'Ryan',
-        percentage: 25
-    },
-    {
-
-        rank: 10,
-        name: 'Kenyatta',
-        percentage: 28.57
-
-    },
-    {
-
-        rank: 10,
-        name: 'Andrew',
-        percentage: 40
-    },
-    {
-
-        rank: 10,
-        name: 'Rakib',
-        percentage: 0
-    },
-    {
-
-        rank: 10,
-        name: 'Andrae',
-        percentage: 37.50
-    },
-    {
-
-        rank: 10,
-        name: 'Aj',
-        percentage: 50
+    } else {
+        docSpan.style.bottom = "0px";
+        navSpan.style.bottom = "0px";
+        navListItems.hidden = false;
+        docList.hidden = false;
+        docSpan.style.rotate = "0deg";
+        navSpan.style.rotate = "0deg";
     }
+}
 
-]
-const navListItems = document.getElementsByClassName("nav")
+let mobile = window.matchMedia("(max-width: 1170px)");
+
+//GLOBAL CONSTANTS
+const header = document.querySelector("h1");
+const navListItems = document.getElementsByClassName("nav");
 const navListHead = document.getElementById("nav-list-head");
 const docListHead = document.getElementById("doc-list-head");
 const navList = document.getElementById("nav-list");
 const docList = document.getElementById("doc-list");
-const nav = document.querySelector("nav");
 const navSpan = document.getElementById("nav-span");
 const docSpan = document.getElementById("doc-span");
 const table = document.querySelector("tbody");
-const nav1 = document.getElementById("nav1");
-const nav2 = document.getElementById("nav2");
-const nav3 = document.getElementById("nav3");
-const nav4 = document.getElementById("nav4");
 
+//DETERMINE SCREEN SIZE FOR LIST ITEM DISPLAY
+function windowCheckTransitions(x, item) {
+    if (x.matches) {
+        item.style.display = "inline-block";
+    } else {
+        item.style.display = "block"
+    }
+}
+
+//DROPDOWN ANIMATION FOR LIST ITEMS
 navListHead.addEventListener('click', () => {
     if (navList.hidden === false) {
-        /* setTimeout(()=>{
-            setTimeout(()=>{
-            nav4.style.transition = "opacity 5s"
+        let a = 0;
+        if (window.matchMedia("(max-width: 1170px)").matches) {
+            navList.hidden = true;
+        } else {
+            for (let j = (navListItems.length - 1); j > -1; j--) {
+
+
+                a++;
+                windowCheckTransitions(mobile, navListItems[j]);
+                setTimeout(() => {
+                    setTimeout(() => {
+                        navListItems[j].style.opacity = "1"
+                    }, 0)
+                    setTimeout(() => {
+                        navListItems[j].style.opacity = ".8"
+                    }, 50)
+                    setTimeout(() => {
+                        navListItems[j].style.opacity = ".6"
+                    }, 100)
+                    setTimeout(() => {
+                        navListItems[j].style.opacity = ".4"
+                    }, 150)
+                    setTimeout(() => {
+                        navListItems[j].style.opacity = ".2";
+                    }, 200)
+                    setTimeout(() => {
+                        navListItems[j].style.opacity = "0";
+                    }, 250)
+
+                }, 150 * a)
             }
-            )
-            nav4.style.display = "none";
-            console.log("test");
-        }, 0);
-        setTimeout(()=>{
-            nav3.style.display = "none";
-            console.log("test");
-        }, 25);
-        setTimeout(()=>{
-            nav2.style.display = "none";
-            console.log("test");
-        }, 50);
-        setTimeout(()=>{
-            nav1.style.display = "none";
-            console.log("test");
-        }, 75);
-        */
-        navList.hidden = true;
+            setTimeout(() => {
+
+                navList.hidden = true;
+            }, 600)
+        }
         navSpan.style.rotate = "180deg";
         navSpan.style.bottom = "5px"
     } else if (navList.hidden === true) {
         navList.hidden = false;
+        if (window.matchMedia("(max-width: 1170px)").matches){
+          return
+        }else{
+        for (let i = 0; i < navListItems.length; i++) {
+            windowCheckTransitions(mobile, navListItems[i]);
+            setTimeout(() => {
+                setTimeout(() => {
+                    navListItems[i].style.opacity = "0"
+                }, 0)
+                setTimeout(() => {
+                    navListItems[i].style.opacity = ".2"
+                }, 50)
+                setTimeout(() => {
+                    navListItems[i].style.opacity = ".4"
+                }, 100)
+                setTimeout(() => {
+                    navListItems[i].style.opacity = ".6"
+                }, 150)
+                setTimeout(() => {
+                    navListItems[i].style.opacity = ".8"
+                }, 200)
+                setTimeout(() => {
+                    navListItems[i].style.opacity = "1";
+                }, 250)
+            }, 150 * i)
+        }
+    }
         navSpan.style.rotate = "0deg";
         navSpan.style.bottom = "0px";
     }
@@ -120,33 +127,29 @@ docListHead.addEventListener('click', () => {
         docList.hidden = false;
         docSpan.style.rotate = "0deg";
         docSpan.style.bottom = "0px";
+
     }
 })
 
-let mobile = window.matchMedia("(max-width: 1170px)");
-
-function windowCheck(x) {
-    if (x.matches) {
-        docSpan.style.rotate = "180deg";
-        navSpan.style.rotate = "180deg";
-        docSpan.style.bottom = "0px";
-        navSpan.style.bottom = "0px";
-        navList.hidden = true;
-        docList.hidden = true;
-        
-    } else {
-        navSpan.style.bottom = "5px"
-        docSpan.style.bottom = "5px";
-        navListItems.hidden = false;
-        docList.hidden = false;
-        docSpan.style.rotate = "0deg";
-        navSpan.style.rotate = "0deg";
-    }
-}
 
 
-windowCheck(mobile);
-
+header.addEventListener('click', () => {
+    setTimeout(() => {
+        header.style.opacity = ".9"
+    }, 600)
+    setTimeout(() => {
+        header.style.opacity = ".7"
+    }, 650)
+    setTimeout(() => {
+        header.style.opacity = ".5"
+    }, 700)
+    setTimeout(() => {
+        header.style.opacity = ".3"
+    }, 750)
+    setTimeout(() => {
+        header.style.opacity = "0"
+    }, 800)
+})
 
 let sortedReps = reps.sort(
     (rep1, rep2) => (rep1.percentage < rep2.percentage) ? 1 : (rep1.percentage > rep2.percentage) ? -1 : 0);
@@ -169,35 +172,6 @@ function changeRank() {
 }
 
 
-
-
-
+windowCheck(mobile);
 
 changeRank()
-
-/*
-let SHEET_ID = "1u011JiIm1YYlpmTfGab6GIVNlJHwzk2dWzt-d8iFs-I";
-let baseUrl = "https://docs.google.com/spreadsheets/d/";
-let key = "edit#gid=0";
-let url = baseUrl + SHEET_ID + key;
-
-async function fetchSheets(){
-    try {
-const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT_atSPXV0wy2hXokyNX3MWsbjD8HMtuGiJQN65tbiRj5rE7Qu_3Q14BRE7UFwhnm9FDrmL6J5zpgEP/pubhtml", { 
-method: "GET", // *GET, POST, PUT, DELETE, etc.
-mode: "no-cors", // no-cors, *cors, same-origin
-cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-credentials: "same-origin", // include, *same-origin, omit
-headers: {
-  "Content-Type": "application/json" }
-}
-  );
-console.log(response);
-console.log(sheet);
-    }catch (error){
-        console.log(error)
-    }
-}
-
-fetchSheets()
-*/

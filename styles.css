@@ -1,3 +1,11 @@
+/* COLORS
+hsl(277, 100%, 50%) Dark Purple
+hsl(277, 100%, 70%) Light Purple
+hsl(226, 100%, 50%) Dark Blue
+hsl(226, 100%, 70%) Light Blue
+*/
+
+
 * {
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
@@ -34,7 +42,6 @@
         margin: 10px;
         width: 90%;
         color: aliceblue;
-        background-color: hsl(226, 100%, 50%);
         border-radius: 5px;
     }
 
@@ -188,10 +195,8 @@ h1 {
 
 
 nav {
-    
     flex-shrink: 1;
     top: 10px;
-    
     width: 20%;
     float: left;
     text-align: center;
@@ -202,13 +207,12 @@ nav {
 
 nav h3 {
     text-align: center;
-    color: hsl(277, 100%, 50%);
+    background-color: gray;
     border-bottom: 3px solid black;
 }
 
 nav h3:hover {
     cursor: pointer;
-    color: gray;
 }
 
 nav h3 span {
@@ -224,7 +228,7 @@ nav li {
     font-size: 80%;
     margin: 10px auto;
     position: relative;
-    background-color: hsl(226, 100%, 70%);;
+    background-color: hsl(226, 100%, 70%);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
@@ -233,10 +237,9 @@ nav li {
 }
 
 
-
 .nav:hover {
     color: white;
-    background-color: hsl(277, 100%, 70%);
+    background-color: hsl(226, 100%, 50%);
     cursor: pointer;
 }
 
@@ -260,6 +263,9 @@ nav span {
     /* Standard syntax */
 }
 
+#doc-list.is-dropped {
+    transition:all 2s ease-in;
+}
 .doc {
     background-color: hsl(0, 0%, 87%);
     color: black;
@@ -323,7 +329,7 @@ section h4 {
     font-size: 70%;
     margin-top: 40px;
     padding: 10px;
-    background-color: hsl(277, 100%, 50%);
+    background-color: hsl(226, 100%, 70%);
    /* border-top: 3px solid black;
     border-right: 3px solid black;
     border-left: 3px solid black; */
@@ -366,7 +372,7 @@ tr {
 }
 
 th {
-    background-color: hsl(277, 100%, 50%);
+    background-color: hsl(226, 100%, 70%);;
     color: white;
     font-weight: 700;
 }
