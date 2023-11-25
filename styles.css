@@ -71,6 +71,13 @@ hsl(226, 100%, 70%) Light Blue
         font-size: 10px;
         width: 80%;
     }
+
+    .gg-crown {
+        bottom: 10px;
+        left: 65%;
+     }
+     
+     
 }
 
 
@@ -159,6 +166,13 @@ hsl(226, 100%, 70%) Light Blue
         font-size: 20px;
         width: 40%;
     }
+
+    .gg-crown {
+        bottom: 17px;
+        left: 75%;
+     }
+     
+     
 }
 
 @media only screen and (min-width: 1900px) {
@@ -361,7 +375,6 @@ section p {
 tr,
 td,
 th {
-    
     padding: 10px;
 }
 
@@ -377,6 +390,10 @@ th {
     font-weight: 700;
 }
 
+td {
+    max-height: 29.6px;
+}
+
 footer {
     margin-top: 50px;
     padding: 80px;
@@ -387,6 +404,13 @@ footer {
     font-size: 15px;
 }
 
-td+td+td::after {
-    content: "%"
+.gg-crown {
+   display: inline-block;
+   margin: 0px;
+   
+   
+}
+
+.raffle {
+    background-color: black;
 }

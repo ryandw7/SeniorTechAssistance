@@ -7,27 +7,27 @@ export let reps = [
         percentage: 0
     },{
         name: 'Aj',
-        percentage: 50
+        percentage: 31.25
     },{
         name: 'Kenyatta',
-        percentage: 22.22
+        percentage: 27.78
     },{
         name: 'Muhammad',
-        percentage: 0
+        percentage: 9.09
     },{
         name: 'Andrae',
-        percentage: 37.50
+        percentage: 26.67
     },{
         name: 'Scott',
-        percentage: 0
+        percentage: 29.41
     },{
         name: 'David',
-        percentage: 25
+        percentage: 27.27
     },{
         name: 'Neil',
-        percentage: 20
+        percentage: 54.17
     },{
         name: 'Ryan',
-        percentage: 25
+        percentage: 18.18
     }
 ]

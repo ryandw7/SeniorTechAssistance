@@ -48,7 +48,8 @@ navListHead.addEventListener('click', () => {
     if (navList.hidden === false) {
         let a = 0;
         if (window.matchMedia("(max-width: 1170px)").matches) {
-            navList.hidden = true;
+                    navList.hidden = true;
+            
         } else {
             for (let j = (navListItems.length - 1); j > -1; j--) {
 
@@ -86,8 +87,11 @@ navListHead.addEventListener('click', () => {
         navSpan.style.bottom = "5px"
     } else if (navList.hidden === true) {
         navList.hidden = false;
+        navSpan.style.rotate = "0deg";
+        navSpan.style.bottom = "0px";
+       
         if (window.matchMedia("(max-width: 1170px)").matches){
-          return
+           
         }else{
         for (let i = 0; i < navListItems.length; i++) {
             windowCheckTransitions(mobile, navListItems[i]);
@@ -113,8 +117,6 @@ navListHead.addEventListener('click', () => {
             }, 150 * i)
         }
     }
-        navSpan.style.rotate = "0deg";
-        navSpan.style.bottom = "0px";
     }
 })
 
@@ -162,16 +164,20 @@ function changeRank() {
     for (let i = 0; i < sortedReps.length; i++) {
         let row = table.insertRow(i);
         let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
-
         cell1.textContent = sortedReps[i].rank;
-        cell2.textContent = sortedReps[i].name;
-        cell3.textContent = sortedReps[i].percentage.toFixed(2);
+        let cell2 = row.insertCell(1);
+      cell2.textContent = sortedReps[i].name;
+            
+        
+       
+        
+        let cell3 = row.insertCell(2);
+        cell3.textContent = `${sortedReps[i].percentage.toFixed(2)}%`
+    
     }
 }
 
-
+document.querySelector("tr").appendChild(document.createElement("i"));
 windowCheck(mobile);
 
 changeRank()
