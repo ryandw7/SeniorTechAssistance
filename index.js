@@ -33,7 +33,8 @@ const docList = document.getElementById("doc-list");
 const navSpan = document.getElementById("nav-span");
 const docSpan = document.getElementById("doc-span");
 const table = document.querySelector("tbody");
-
+const topXM = document.getElementById("winner");
+const raffleWinners = document.getElementById("drawing-winners")
 //DETERMINE SCREEN SIZE FOR LIST ITEM DISPLAY
 function windowCheckTransitions(x, item) {
     if (x.matches) {
@@ -181,3 +182,20 @@ document.querySelector("tr").appendChild(document.createElement("i"));
 windowCheck(mobile);
 
 changeRank()
+
+function FillWinners(){
+let raffleEntries = []
+for(let i = 0; i < reps.length; i++){
+    if (reps[i].rank === 1){
+        topXM.textContent = `Top XM: ${reps[i].name}`
+    }
+    if(reps[i].percentage >= 30){
+        raffleEntries.push(reps[i].name);
+    }
+}
+raffleEntries = raffleEntries.join(', ')
+raffleWinners.textContent = `Raffle Entries: ${raffleEntries} `
+console.log(raffleEntries);
+}
+
+FillWinners()
