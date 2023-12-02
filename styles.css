@@ -306,6 +306,14 @@ section h2 {
 
 }
 
+#raffle-winner {
+    color: hsl(277, 100%, 50%);
+}
+
+#heartland-incentive .ended, #rochester-incentive .ended{
+    color: red;
+    text-decoration: none;
+}
 section h3 {
     text-align: center;
     font-size: 80%;
